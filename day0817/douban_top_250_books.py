@@ -11,10 +11,7 @@ def get_url_name(my_url):
 
     response = requests.get(my_url, headers=header)
 
-    # print(response.text)
-
     bs_info = bs(response.text, 'html.parser')
-    # print(bs_info.find_all('div', attrs={'class': 'pl2'})[0])
 
     for tags in bs_info.find_all('div', attrs={'class': 'pl2'}):
         # 获取a标签
